@@ -1,18 +1,15 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Header from "../components/Header/Header";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import SingleLaunch from "../pages/SingleLaunch";
-
 const Layout = () => {
   return (
-    <div>
-      <Header></Header>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/singleLaunch" element={<SingleLaunch />} />
+        <Route path="/singleLaunch/:flight_number" element={<SingleLaunch />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 };
 
